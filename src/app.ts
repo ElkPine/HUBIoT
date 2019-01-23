@@ -10,7 +10,9 @@ app.get('/', (req, res) => {
 
 app.listen(port, (err: Error) => {
   if (err) {
+    // tslint:disable-next-line:no-console
     return console.log(err);
   }
+  // tslint:disable-next-line:no-console
   console.log(`Example app listening on port ${port}!`);
 });
