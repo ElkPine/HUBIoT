@@ -1,0 +1,33 @@
+{
+    "extends": ["tslint:recommended", "tslint-config-prettier"],
+    "linterOptions": {
+      "exclude": [
+        "config/**/*.js",
+        "node_modules/**/*.ts",
+        "semantic/**/*"
+      ]
+    },
+    "rules": {
+      "quotemark": [true, "single"],
+      "object-literal-sort-keys": false,
+      "typedef-whitespace": [false],
+      "max-line-length": [true, { "limit": 120, "ignore-pattern": "^import " }],
+      "semicolon": [true, "always"],
+      "no-trailing-whitespace": [true],
+      "variable-name": [
+        true,
+        "check-format",
+        "allow-leading-underscore",
+        "allow-pascal-case"
+      ],
+      "trailing-comma": [
+        true,
+        {
+          "multiline": "always",
+          "singleline": "never",
+          "esSpecCompliant": true
+        }
+      ],
+      "eofline": true
+    }
+  }

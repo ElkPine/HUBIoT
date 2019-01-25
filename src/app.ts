@@ -1,16 +1,22 @@
-import express = require('express');
+import * as bodyParser from 'body-parser';
+import express from 'express';
 
-// Create a new express application instance
-const app: express.Application = express();
-const port = process.env.port || 3000;
+import { routes } from './routes';
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
-
-app.listen(port, (err: Error) => {
-  if (err) {
-    return console.log(err);
+class App {
+  public app: express.Application = express();
+  constructor() {
+    this.config();
   }
-  console.log(`Example app listening on port ${port}!`);
-});
+
+  private config = () => {
+    // support application/json type post data
+    this.app.use(bodyParser.json());
+    // support application/x-www-form-urlencoded post data
+    this.app.use(bodyParser.urlencoded({ extended: false }));
+    // Routing
+    this.app.use('/', routes);
+  }
+}
+
+export default new App().app;
