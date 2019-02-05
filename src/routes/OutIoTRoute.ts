@@ -10,9 +10,9 @@ export class OutIoTRoute {
   }
 
   private config = () => {
-    this.router.get('/outiot', (req: Request, res: Response) => {
-      outIoTController.getOutIoT(req, res);
-    });
+    this.router.get('/outiot', outIoTController.getOutIoT);
+
+    this.router.get('/outiot/:id', outIoTController.getOutIoTId);
   }
 }
 

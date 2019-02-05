@@ -10,9 +10,7 @@ export class HomeRoute {
   }
 
   private config = () => {
-    this.router.get('/', (req: Request, res: Response) => {
-      homeController.root(req, res);
-    });
+    this.router.get('/', homeController.root);
   }
 }
 

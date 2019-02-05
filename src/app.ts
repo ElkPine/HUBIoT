@@ -15,7 +15,7 @@ class App {
     // support application/x-www-form-urlencoded post data
     this.app.use(bodyParser.urlencoded({ extended: false }));
     // Routing
-    this.app.use('/', routes);
+    this.app.use(routes);
   }
 }
 
